@@ -10,23 +10,30 @@ namespace prac21
     {
         static void Main(string[] args)
         {
-            Calculate obj1 = new Calculate();
+            Time obj1 = new Time();
+            obj1 = new Time();
             Console.WriteLine(obj1.GetInfo());
-            Console.WriteLine("Результат: " + obj1.ProcessValues());
+            Console.WriteLine("Общее количество минут: " + obj1.CalculateTotalMinutes());
+            Console.WriteLine("Общее количество секунд: " + obj1.CalculateTotalSeconds());
 
-            Calculate obj2 = new Calculate(5);
+            Time obj2 = new Time(5, 30);
             Console.WriteLine(obj2.GetInfo());
-            Console.WriteLine("Результат: " + obj2.ProcessValues());
+            Console.WriteLine("Общее количество минут: " + obj2.CalculateTotalMinutes());
+            Console.WriteLine("Общее количество секунд: " + obj2.CalculateTotalSeconds());
 
-            Console.Write("Введите первое число: ");
-            double num1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите количество часов: ");
+            int hours = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Введите второе число: ");
-            double num2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Введите количество минут: ");
+            int minutes = Convert.ToInt32(Console.ReadLine());
 
-            Calculate obj3 = new Calculate(num1, num2);
+            Console.Write("Введите количество секунд: ");
+            int seconds = Convert.ToInt32(Console.ReadLine());
+
+            Time obj3 = new Time(hours, minutes, seconds);
             Console.WriteLine(obj3.GetInfo());
-            Console.WriteLine("Результат: " + obj3.ProcessValues());
+            Console.WriteLine("Общее количество минут: " + obj3.CalculateTotalMinutes());
+            Console.WriteLine("Общее количество секунд: " + obj3.CalculateTotalSeconds());
 
             Console.ReadLine();
         }
